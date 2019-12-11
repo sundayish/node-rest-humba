@@ -1,0 +1,19 @@
+{
+  "name": "rest-humba",
+  "version": "1.0.0",
+  "description": "Node.js RESTful API, to use for humba",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sundayish/node-rest-humba.git"
+  },
+  "author": "Tom Sonntag",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sundayish/node-rest-humba/issues"
+  },
+  "homepage": "https://github.com/sundayish/node-rest-humba#readme"
+}
