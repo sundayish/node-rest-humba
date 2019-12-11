@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sundayish/node-rest-humba/issues"
   },
-  "homepage": "https://github.com/sundayish/node-rest-humba#readme"
+  "homepage": "https://github.com/sundayish/node-rest-humba#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
