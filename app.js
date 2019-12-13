@@ -6,10 +6,7 @@ const mongoose = require('mongoose');
 
 const productRoutes = require('./api/routes/products');
 
-mongoose.connect('mongodb+srv://root:' + process.env.MONGO_ATLAS_PW + '@node-rest-test-trriz.mongodb.net/test?retryWrites=true&w=majority', 
-{
-    useMongoClient: true
-});
+mongoose.connect('mongodb+srv://root:mama@node-rest-test-trriz.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
