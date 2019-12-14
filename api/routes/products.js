@@ -6,9 +6,16 @@ const Product = require('../models/product');
 
 //GETing from a server
 router.get('/', (req, res, next) => {
-    res.status(200).json({
-        message: 'Handling request GET for /products'
-    });
+    Product.find()
+    .exec()
+    .then(docs => {
+        console.log(docs);
+        res.status(200).json(docs);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({error: err});
+    })
 });
 
 //POSTing into the server
@@ -38,14 +45,33 @@ router.get('/:productId', (req, res, next) => {
     Product.findById(id)
     .exec()
     .then(doc => {
-        console.log(doc);
-        res.status(200).json(doc);
+        console.log("From database", doc);
+        if (doc) {
+            res.status(200).json(doc);
+        } else {
+            res.status(404).json({message: 'No valid entry found!'});
+        }
     })
     .catch(err => {
         console.log(err);
         res.status(500).json({error: err});
     });
     
+});
+
+router.delete("/:productId", (req, res, next) => {
+    const id = req.params.productId;
+    Product.deleteOne({ _id: id })
+    .exec()
+    .then(result => {
+        res.status(200).json(result);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({
+            error: err
+        });
+    });
 });
 
 module.exports = router;
