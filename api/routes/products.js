@@ -88,7 +88,7 @@ router.patch("/:productId", (req, res, next) => {
     })
     .catch(err => {
         console.log(err);
-        res.status(500).json({
+        res.status(404).json({
             error: err
         });
     });
